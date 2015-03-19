@@ -5,6 +5,7 @@
 #                                                                       #
 # Change the picture size under dir "DIR"+"FOLDER".                     #
 # The resize picture will be store in "DIR"+"NEWFOLDER".                #
+# 
 #                                                                       #
 # * This script is for Mac OSX.                                         #
 #########################################################################
@@ -15,19 +16,21 @@ from wand.image import Image
 #########################################################################
 # Variable Define Area                                                  #
 #########################################################################
-DIR = '/Users/edlin/Desktop/Pack-it-now/4clothes'
+DIR = '/Users/edlin/Desktop/Pack-it-now/3clothes'
 
-FOLDER = '/TEST'
-NEWFOLDER = '/TEST'
+FOLDER = '/trousers_jpg'
+NEWFOLDER = '/trousers_bmp'
 
-RESIZE = 20
+RESIZE = 40
 #########################################################################
 
 
 filenames = os.listdir(DIR + FOLDER)
-size = len(filenames)
 
-os.system("rm" + DIR + FOLDER + os.sep + ".DS_Store")
+os.system("rm " + DIR + FOLDER + os.sep + ".DS_Store")
+os.system("rm " + DIR + NEWFOLDER + os.sep + "*")
+
+size = len(filenames)
 
 for index in range(0,size):
     fn = DIR + FOLDER + os.sep + filenames[index]
